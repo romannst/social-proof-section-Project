@@ -1,0 +1,198 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+#root, #__next {
+    isolation: isolate;
+}
+/* end css reset */
+
+:root {
+    --VeryDarkMagenta: hsl(300, 43%, 22%);
+    --SoftPink: hsl(333, 80%, 67%);
+
+    --DarkGrayishMagenta: hsl(303, 10%, 53%);
+    --LightGrayishMagenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+}
+
+.--title {
+    color: var(--VeryDarkMagenta);
+    font-weight: 700;
+}
+.--paragraph {
+    color: var(--DarkGrayishMagenta);
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 2.813rem;
+    line-height: .9;
+}
+p {
+    line-height: 1.2;
+}
+
+body {
+    min-height: 100svh;
+    font-family: "League Spartan", sans-serif;
+    font-size: 0.938rem;
+    display: grid;
+    place-items: center;
+    background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+}
+
+.wrapper {
+    max-width: 62.5rem;
+    padding: 2rem;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+@media (max-width: 768px) {
+    section {
+        margin-block: 3rem;
+    }
+}
+.top {
+    display: flex;
+    flex-direction: column;
+}
+.top__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.top__ratings {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+.top__ratings--rating {
+    background-color: var(--LightGrayishMagenta);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: .5rem;
+}
+.stars {
+    display: flex;
+    gap: .5rem;
+}
+@media (min-width: 768px) {
+    .top {
+        flex-direction: row;
+    }
+    .top__text {
+        text-align: start;
+        align-items: start;
+        margin-bottom: 0;
+    }
+    .--width {
+        max-width: 22.188rem;
+    }
+    .top__ratings--rating {
+        flex-direction: row;
+    }
+    .top__ratings .top__ratings--rating:nth-child(1) {
+        align-self: flex-start;
+    }
+    .top__ratings .top__ratings--rating:nth-child(2) {
+        align-self: center;
+    }
+    .top__ratings .top__ratings--rating:nth-child(3) {
+        align-self: flex-end;
+    }
+}
+.bottom {
+    min-height: 14.063rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+@media (min-width: 730px) {
+    .bottom {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+.bottom .bottom-comment:nth-child(1) {
+    align-self: flex-start;
+}
+.bottom .bottom-comment:nth-child(2) {
+    align-self: center;
+}
+.bottom .bottom-comment:nth-child(3) {
+    align-self: flex-end;
+}
+
+.bottom-comment {
+    flex: 1;
+    background-color: var(--VeryDarkMagenta);
+    display: flex;
+    flex-direction: column;
+    padding: 1.72rem;
+    border-radius: .5rem;
+    gap: 1rem;
+}
+.comment__user {
+    display: flex;
+    gap: 1rem;
+}
+.comment__user img {
+    width: 2.188rem;
+    height: auto;
+    border-radius: 4rem;
+}
+.comment__user--id {
+    display: flex;
+    flex-direction: column;
+}
+.comment__user--name {
+    color: var(--White);
+    font-weight: 500;
+}
+.comment__user--class {
+    color: var(--SoftPink);
+    font-weight: 400;
+}
+.bottom-comment__message {
+    color: var(--White);
+    font-weight: 400;
+}
